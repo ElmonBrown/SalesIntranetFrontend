@@ -1,0 +1,159 @@
+<app-header></app-header>
+<div id="main-content">
+  <div class="container-fluid">
+    <!-- Page header section  -->
+    <div class="block-header">
+      <div class="row clearfix">
+        <div class="col-lg-4 col-md-12 col-sm-12">
+          <h1>Detalle</h1>
+          <span>Detalle de producto seleccionado</span>
+        </div>
+        <div class="col-lg-8 col-md-12 col-sm-12 text-lg-right">
+					
+				</div>
+      </div>
+    </div>
+
+    <div class="row clearfix">
+      <!-- IMAGES -->
+			<div class="col-xl-5 col-lg-4 col-md-6 col-12 pl-lg-2">
+        <div class="w-100 rounded-lg card-bg card shadow-card py-3 px-3">
+          <div class="d-flex justify-content-between w-100">
+            <div class="d-flex justify-content-between w-100">
+              <div class="d-flex justify-content-center">
+                <img *ngIf="!product?.imageURL"
+                  class="item-image rounded-lg" 
+									src="../../../../../assets/images/product-placeholder.png" 
+									alt=""
+								>
+                <img class="item-image rounded-lg" 
+									[src]="product?.imageURL" 
+									alt=""
+								>
+              </div>
+            </div>
+          </div>
+				</div>
+        <button class="btn btn-default w-100 py-2 px-3 rounded-lg" (click)="backToPreviousPage()">
+          <i class="fa fa-arrow-left mr-3" aria-hidden="true"></i>
+          <span>Continuar seleccionando</span> 
+        </button>
+			</div>
+			<!-- DETAILS -->
+			<div class="col-lg-5 col-md-6 col-12">
+				<div class="w-100 rounded-lg card-bg card shadow-card">
+					<div class="w-100 py-4 px-4">
+						<h5 class="font-weight-bold m-0 sub-title">{{ product?.name | titlecase }}</h5>
+					</div>
+          <hr class="m-0 mx-4">
+					<div class="w-100 py-4 d-flex flex-column px-4">
+            <div>
+              <span class="font-weight-bold sub-title">Presentaciones: </span>
+            </div>
+            <div class="d-flex mt-2">
+              <div *ngFor="let presentation of product?.presentations">
+                <app-tag 
+                (changeSelectedTag)="onChangeSelectedTag($event)"
+                [presentationProperties]="presentation"
+                [selectedPresentation]="selectedPresentation"
+                ></app-tag>
+              </div>
+            </div>
+					</div>
+          <hr class="m-0 mx-4">
+					<div class="w-100 py-4 d-flex flex-column px-4">
+            <button class="btn btn-default rounded-lg">
+              <i class="fa fa-download mr-2" aria-hidden="true"></i>
+              <span class="font-weight-bold sub-title">Descargar ficha técnica</span>
+            </button>
+					</div>
+          <hr class="m-0 mx-4">
+					<div class="w-100 py-4 d-flex flex-column px-4">
+            <div class="d-flex">
+              <span class="font-weight-bold sub-title">Nombre de la presentación: </span>
+              <span class="font-weight-normal ml-2">{{ ' ' + selectedPresentation?.name | titlecase }}</span>
+            </div>
+            <div class="d-flex mt-2">
+              <span class="font-weight-bold sub-title">Peso de la presentación: </span>
+              <span class="font-weight-normal ml-2">{{ selectedPresentation?.pesoKg + ' KG' }}</span>
+            </div>
+					</div>
+          <!-- <hr class="m-0 mx-4">
+          <div class="w-100 py-4 d-flex flex-column px-4">
+            <div>
+              <span class="font-weight-bold sub-title">Precio de lista: </span>
+              <span class="font-weight-normal ml-2">
+                {{ (product?.price | currency: ' ') + ' RD$' }}
+              </span> 
+            </div>
+					</div> -->
+          <hr class="m-0 mx-4">
+					<div class="w-100 py-4 d-flex flex-column px-4">
+            <div>
+              <span class="font-weight-bold sub-title">Descripción: </span>
+            </div>
+            <div class="d-flex mt-1">
+              <p>{{ product?.description }}
+              </p>
+            </div>
+					</div>
+				</div>
+			</div>
+			<!-- ORDER -->
+			<div class="col-xl-2 col-lg-3 col-md-4 col-12">
+				<div class="w-100 rounded-lg card-bg card shadow-card">
+					<div class="w-100 py-4 px-4">
+						<h5 class="font-weight-bold m-0 sub-title">Acciones</h5>
+					</div>
+          <hr class="m-0 mx-4">
+					<div class="w-100 py-3 d-flex align-items-center justify-content-between px-4">
+						<span class="font-weight-bold sub-title">Stock: </span>
+						<span class="font-weight-bold sub-title">{{ selectedPresentation?.stock }}</span>
+					</div>
+          <hr class="m-0 mx-4">
+					<div class="w-100 py-3 d-flex align-items-center justify-content-between px-4">
+						<span class="font-weight-bold sub-title">Cantidad: </span>
+            <div class="btn-group" dropdown>
+							<button id="button-basic" dropdownToggle type="button" class="btn btn-default dropdown-toggle"
+									aria-controls="dropdown-basic">
+								{{ quantitySelected }}<span class="caret"></span>
+							</button>
+							<ul id="dropdown-basic" *dropdownMenu class="dropdown-menu card-bg customized-dropdown"
+									role="menu" aria-labelledby="button-basic">
+								<li *ngFor="let item of quantityDisplayed" role="menuitem">
+                  <a (click)="changeQuantity(item)" class="dropdown-item" href="javascript:void(0);">{{ item }}</a>
+                </li>
+							</ul>
+						</div>
+					</div>
+          <!-- <hr class="m-0 mx-4">
+					<div class="w-100 py-3 d-flex align-items-center justify-content-between px-4">
+						<span class="font-weight-bold sub-title">Precio: </span>
+						<span class="font-weight-bold sub-title">
+              {{ ((selectedPresentation?.pesoKg * quantitySelected) *
+                product?.price | currency: ' ') + ' RD$' }}
+            </span>
+					</div> -->
+          <hr class="m-0 mx-4">
+          <div class="d-flex flex-column justify-content-between mb-4 px-4 pt-4 align-items-center">
+            <button class="btn btn-primary btn-detail rounded-lg mb-3" 
+              [disabled]="selectedPresentation?.stock == 0"
+              (click)="addToCart()"
+              >
+              <i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i>
+              <span>Agregar a carrito</span> 
+            </button>
+            <button 
+              [disabled]="selectedPresentation?.stock == 0"
+              (click)="addAndJumpToCart()"
+              class="btn btn-primary btn-detail rounded-lg"
+            >Crear pedido</button>
+          </div>
+				</div>
+			</div>
+		</div>
+  </div>
+</div>
+<app-footer></app-footer>
+
+

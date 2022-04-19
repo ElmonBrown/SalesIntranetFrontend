@@ -1,0 +1,166 @@
+<div>
+
+
+    <div style="padding: 40px 3% 20px;">
+
+        <div class="card">
+            <div class="header">
+                <h2>Registro de usuario <small>Por favor registrarte para que tengas acceso completo a los recursos de
+                        información en formatos accesibles..</small></h2>
+            </div>
+            <div class="body">
+                <form [formGroup]="frmRegister" (ngSubmit)="save($event)">
+                    <div class="row clearfix">
+
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="form-group mr-4">
+                                <label class="control-label font-weight-bold" for="inputSelect01 ">Sociedad</label>
+                                <select class="custom-select" id="inputSelect01" data-form-type="other"
+                                    formControlName="society">
+                                    <option selected="">Escoger...</option>
+                                    <option value="1">DPCO </option>
+                                    <option value="2">MQDO </option>
+                                </select>
+                            </div>
+
+                            <p *ngIf="frmRegister.get('society').errors && frmRegister.get('society').touched">
+                                <small class="form-text text-danger"
+                                    *ngIf="frmRegister.get('society').hasError('required') && frmRegister.get('society').touched">El
+                                    campo usuario es
+                                    requerido.</small>
+                            </p>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="form-group mr-4 ">
+                                <label for="phone" class="control-label font-weight-bold">Nombres</label>
+                                <input type="text" id="name" class="form-control" data-form-type="name"
+                                    formControlName="name">
+
+                            </div>
+
+                            <p *ngIf="frmRegister.get('name').errors && frmRegister.get('name').touched">
+                                <small class="form-text text-danger"
+                                    *ngIf="frmRegister.get('name').hasError('required') && frmRegister.get('name').touched">El
+                                    campo nombre es
+                                    requerido.</small>
+                            </p>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="form-group mr-4">
+                                <label for="street" class="control-label font-weight-bold">Calle y número</label>
+                                <input type="text" id="Address" class="form-control" data-form-type="address"
+                                    formControlName="address">
+                            </div>
+
+                            <p *ngIf="frmRegister.get('address').errors && frmRegister.get('address').touched">
+                                <small class="form-text text-danger"
+                                    *ngIf="frmRegister.get('address').hasError('required') && frmRegister.get('address').touched">El
+                                    campo es
+                                    requerido.</small>
+                            </p>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="form-group mr-4">
+                                <label for="street2" class="control-label font-weight-bold">Calle secundaria</label>
+                                <input type="text" id="name" class="form-control" data-form-type="AlternativeAddress"
+                                    formControlName="alternativeAddress">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="form-group mr-4">
+                                <label for="city" class="control-label font-weight-bold">Ciudad</label>
+                                <input type="text" id="name" class="form-control" data-form-type="city"
+                                    formControlName="city">
+                            </div>
+
+                            <p *ngIf="frmRegister.get('city').errors && frmRegister.get('city').touched">
+                                <small class="form-text text-danger"
+                                    *ngIf="frmRegister.get('city').hasError('required') && frmRegister.get('city').touched">El
+                                    campo ciudad es
+                                    requerido.</small>
+                            </p>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="form-group mr-4">
+                                <label for="region" class="control-label font-weight-bold">Región</label>
+
+                                <select class="custom-select" id="inputSelect01" data-form-type="other"
+                                    formControlName="region">
+                                    <option *ngFor="let item of RegionMeasure; let i = index" [ngValue]="item">
+                                        {{item.description}} </option>
+                                </select>
+                            </div>
+
+                            <p *ngIf="frmRegister.get('region').errors && frmRegister.get('region').touched">
+                                <small class="form-text text-danger"
+                                    *ngIf="frmRegister.get('region').hasError('required') && frmRegister.get('region').touched">El
+                                    campo region es
+                                    requerido.</small>
+                            </p>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="form-group mr-4">
+                                <label for="document" class="control-label font-weight-bold">Cédula</label>
+                                <input type="text" id="cedula" class="form-control" data-form-type="cedula"
+                                    formControlName="cedula">
+                            </div>
+                            <p *ngIf="frmRegister.get('cedula').errors && frmRegister.get('cedula').touched">
+                                <small class="form-text text-danger"
+                                    *ngIf="frmRegister.get('cedula').hasError('required') && frmRegister.get('cedula').touched">El
+                                    campo cedula es
+                                    requerido.</small>
+                            </p>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="form-group mr-4">
+                                <label for="email" class="control-label font-weight-bold">Email</label>
+                                <input type="email" id="email" class="form-control" data-form-type="email"
+                                    formControlName="email">
+                            </div>
+
+                            <p *ngIf="frmRegister.get('email').errors && frmRegister.get('email').touched">
+                                <small class="form-text text-danger"
+                                    *ngIf="frmRegister.get('email').hasError('required') && frmRegister.get('email').touched">El
+                                    campo Email es
+                                    requerido.</small>
+                                <small class="form-text text-danger"
+                                    *ngIf="frmRegister.get('email').hasError('email') && frmRegister.get('email').touched">El
+                                    correo no es valido
+                                    .</small>
+                            </p>
+
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="form-group mr-4">
+                                <label for="phone" class="control-label font-weight-bold">Teléfono</label>
+                                <input type="text" id="phone" class="form-control" data-form-type="phone"
+                                    placeholder="(___) ___-____" formControlName="phone">
+
+                            </div>
+                            <p *ngIf="frmRegister.get('phone').errors && frmRegister.get('phone').touched">
+                                <small class="form-text text-danger"
+                                    *ngIf="frmRegister.get('phone').hasError('required') && frmRegister.get('phone').touched">El
+                                    campo Telefono es
+                                    requerido.</small>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-4 mr-4 ">
+                        <button type="submit" class="btn btn-success float-right ">Success</button>
+                    </div>
+                </form>
+            </div>
+            <br>
+
+        </div>
+    </div>
+</div>

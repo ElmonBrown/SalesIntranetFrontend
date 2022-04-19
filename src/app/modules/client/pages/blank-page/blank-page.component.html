@@ -1,0 +1,54 @@
+<app-header></app-header>
+<div id="main-content">
+    <div class="container-fluid">
+        <!-- Page header section  -->
+        <div class="block-header">
+            <div class="row clearfix">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                </div>
+                <div class="col-lg-8 col-md-12 col-sm-12 text-lg-right">
+
+                </div>
+            </div>
+            <h2 class="home-header text-center">¡Hola, bienvenido a ventas!</h2>
+        </div>
+        <div class="row clearfix">
+
+            <div class="col-lg-12 col-md-12">
+                <div class="card planned_task" [ngClass]="{'fullscreen': isFull}">
+                    <div class="header">
+                        <!-- <h2>Página de inicio</h2> -->
+                        <ul class="header-dropdown dropdown">
+                            <li><a href="javascript:void(0);" (click)="fullScreenSection(1)" class="full-screen"><i
+                                        class="fa fa-expand"></i></a></li>
+                            <li class="dropdown" dropdown>
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                                    role="button" aria-haspopup="true" aria-expanded="false" id="button-basic"
+                                    dropdownToggle aria-controls="dropdown-basic"></a>
+                                <ul class="dropdown-menu theme-bg gradient dropdown-menu-right" id="dropdown-basic"
+                                    *dropdownMenu role="menu" aria-labelledby="button-basic">
+                                    <li><a href="javascript:void(0);"><i class="dropdown-icon fa fa-eye"></i> Ver detalles</a></li>
+                                    <li><a href="javascript:void(0);"><i class="dropdown-icon fa fa-share-alt"></i>
+                                            Compartir</a></li>
+                                    <li><a href="javascript:void(0);"><i class="dropdown-icon fa fa-copy"></i> Copiar</a></li>
+                                    <li><a href="javascript:void(0);"><i class="dropdown-icon fa fa-folder"></i> Mover
+                                            </a></li>
+                                    <li><a href="javascript:void(0);"><i class="dropdown-icon fa fa-edit"></i>
+                                            Renombrar</a></li>
+                                    <li><a href="javascript:void(0);"><i class="dropdown-icon fa fa-trash"></i>
+                                            Borrar</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="body d-flex justify-content-center align-items-center flex-column">
+                        <h4 class="mb-4">Sitio para venta de productos</h4>
+                        <img class="w-50" src="../../../../../assets//images//sales-landing-picture.svg" alt="imagen de ventas">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- <app-footer></app-footer> -->

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "ui-media-object.component.scss"
+    ],
+    "names": [],
+    "file": "ui-media-object.component.min.css"
+}

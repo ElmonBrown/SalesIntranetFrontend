@@ -1,0 +1,12 @@
+Información acerca classes a usar (Sólo referente a los colores)
+
+
+USO                           Clase CSS
+
+Para fondo de las cartas:     card-bg
+Para títulos                  title
+Para sub-titulos              sub-title
+Para texto común              text-common
+Para detacar                  text-theme-primary    (solo si "btn-primary" no funciona)
+Para botones a destacar       btn-theme-primary
+

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "ui-list-group.component.scss"
+    ],
+    "names": [],
+    "file": "ui-list-group.component.css"
+}

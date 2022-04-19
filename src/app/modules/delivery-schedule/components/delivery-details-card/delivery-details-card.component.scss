@@ -1,0 +1,28 @@
+.delivery-details {
+    cursor: pointer;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.4rem;
+    box-shadow: 0 0 3px 3px rgba(128, 128, 128, 0.089);
+    hr {
+        color: black;
+        background-color: black;
+        height: 2px;
+    }
+}
+.delivery-details:hover {
+    background-color: var(--font-eee);
+}
+.delivered {
+    background-color: var(--font-eee);
+    cursor: default;
+    box-shadow: none
+}
+.delivered:hover {
+    background-color: var(--font-eee);
+}
+.right-info {
+    small {
+        color: var(--dark-color) !important;
+    }
+}

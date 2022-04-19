@@ -1,0 +1,29 @@
+<div (click)="clickCard()" 
+  class="delivery-details d-flex flex-column" 
+  [ngClass]="{'delivered': delivery.wasDelivered}">
+  <div class="head-info d-flex justify-content-between mb-2">
+    <div class="left-head-info d-flex flex-column">
+      <div *ngIf="delivery.wasDelivered">
+        <input type="checkbox" id="check-delivery" checked disabled class="mr-1">
+        <label for="check-delivery" class="font-weight-bold font-18">Entregado</label>
+      </div>
+      <div *ngIf="!delivery.wasDelivered">
+        <input type="checkbox" id="check-delivery" disabled class="mr-1">
+        <label for="check-delivery" class="font-weight-bold font-18">Sin entregar</label>
+      </div>
+      <span>{{delivery.client}}</span>
+    </div>
+    <div class="right-info d-flex flex-column">
+      <small><strong>Fecha: </strong>{{delivery.date}}</small>
+      <small><strong>Hora: </strong>{{delivery.time}}</small>
+    </div>
+  </div>
+  <div *ngIf="showFullInfo" class="body-info mt-4">
+    <span class="font-weight-bold">ARTICULOS</span>
+    <div class="d-flex flex-column">
+      <ul>
+        <li *ngFor="let item of delivery.articles"><small>{{item.name}}</small></li>
+      </ul>
+    </div>
+  </div>
+</div>

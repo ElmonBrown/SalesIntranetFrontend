@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAG,AAAA,WAAW,CAAC,GAAG,AAAC,CACX,WAAW,CAAE,IAAI,CACjB,WAAW,CAAE,MAAM,CACnB,MAAM,CAAE,OAAO,CACf,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,CAAC,CACV,OAAO,CAAE,GAAG,CACf,AACD,AAAA,WAAW,CAAC,GAAG,CAAC,CAAC,AAAC,CACd,OAAO,CAAE,YAAY,CACrB,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,CAAC,CACT,UAAU,CAAE,MAAM,CAClB,cAAc,CAAE,MAAM,CACzB",
+    "sources": [
+        "ui-icons.component.scss"
+    ],
+    "names": [],
+    "file": "ui-icons.component.min.css"
+}

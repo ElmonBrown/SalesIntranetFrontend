@@ -1,0 +1,106 @@
+<div class="login-form-container">
+	<div class="auth_brand">
+		<a class="navbar-brand d-flex flex-column align-items-center mt-4" href="#">
+			<div class="mb-4 row">	
+				<img src="assets/images/sponsors/Logo__PEPD_fullcolor.png" height="100" class="d-inline-block align-top mr-3" alt="">
+				<img src="assets/images/sponsors/MP-Logo-V1.png" height="100" class="d-inline-block align-top mr-3" alt="">
+				<img src="assets/images/sponsors/logo-multiquimica.png" height="60" class="d-inline-block align-top mr-3" alt="">
+				<img src="assets/images/sponsors/MIC.png" height="100" class="d-inline-block align-top mr-2" alt="">
+				<img src="assets/images/sponsors/LOGO-AIRD.png" height="80" class="d-inline-block align-top mr-3" alt="">
+			</div>
+		</a>
+	</div>
+	<div class="auth-main">
+		<div class="auth_div vivify fadeIn">
+				<div class="card">
+					<div class="header">
+					</div>
+						<span class="text-theme-primary">NOMBRE APP</span>
+						<div class="body">
+							<form class="form-auth-small" autocomplete="off" [formGroup]="miFormulario" (ngSubmit)="login()">
+								<div class="form-group c_form_group">
+										<label>Usuario</label>
+										<input type="text" class="form-control" formControlName="User"
+												placeholder="Introduzca nombre de usuario">
+								</div>
+								<div class="form-group c_form_group">
+									<label>Contraseña</label>
+									<input type="password" class="form-control" formControlName="Password"
+											placeholder="Ingresa tu contraseña">
+								</div>
+								<button 
+									type="submit" 
+									[disabled]="isLoading" 
+									class="btn btn-primary btn-lg btn-block d-flex justify-content-center align-items-center mb-2">
+									<span *ngIf="!isLoading">Acceder</span>
+									<div *ngIf="isLoading" class="btn-loader"></div>
+								</button>
+								<span *ngIf="showError" class="block text-danger font-weight-bold mt-2">Usuario o contraseña incorrectos</span>
+							</form>
+						</div>
+				</div>
+			</div>
+			<div class="animate_lines">
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+			</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+<!-- <div class="login-form-container">
+    <div class="auth-main">
+        <div class="auth_div vivify fadeIn">
+            <div class="auth_brand">
+                <a class="navbar-brand" href="#"><img src="assets/images/icon.svg" width="50"
+                        class="d-inline-block align-top mr-2" alt=""><span class="text-theme-primary">App nombre</span></a>
+            </div>
+            <div class="card">
+                <div class="header">
+                    <p class="lead">Ingrese a su cuenta</p>
+                </div>
+                <div class="body">
+                    <form class="form-auth-small" autocomplete="off" [formGroup]="miFormulario" (ngSubmit)="login()">
+                        <div class="form-group c_form_group">
+                            <label>Usuario</label>
+                            <input type="text" class="form-control" formControlName="User"
+                                placeholder="Intruduzca nombre de  usuario">
+                        </div>
+                        <div class="form-group c_form_group">
+                            <label>Contraseña</label>
+                            <input type="password" class="form-control" formControlName="Password"
+                                placeholder="Ingresa tu contraseña">
+                        </div>
+                        <button 
+                            type="submit" 
+                            [disabled]="isLoading" 
+                            class="btn btn-primary btn-lg btn-block d-flex justify-content-center align-items-center mb-2">
+                            <span *ngIf="!isLoading">Acceder</span>
+                            <div *ngIf="isLoading" class="btn-loader"></div>
+                        </button>
+                        <span *ngIf="showError" class="block text-danger font-weight-bold mt-2">Usuario o contraseña incorrectos</span>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="animate_lines">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+</div> -->

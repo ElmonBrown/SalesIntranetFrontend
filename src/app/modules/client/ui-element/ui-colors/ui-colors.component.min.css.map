@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "ui-colors.component.scss"
+    ],
+    "names": [],
+    "file": "ui-colors.component.min.css"
+}

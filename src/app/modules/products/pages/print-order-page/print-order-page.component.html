@@ -1,0 +1,90 @@
+<shared-print-area>
+  
+  <!-- HEAD-1 -->
+  <div title-1 class="w-100">
+    <h3 class="m-3 font-weight-bold">Orden de compra</h3>
+  </div>
+  
+  <div head-1 class="w-100 d-flex justify-content-between px-3 mb-4">
+    <div class="d-flex flex-column left-head-group">
+      <!-- <h6 class="border-bottom">INFORMACIÓN DE PROVEEDOR</h6> -->
+      <div class="provider-info-group">
+        <label class="font-weight-bold">Factura: </label>
+        <small>{{orderParsed?.invoice}}</small>
+      </div>
+      <div  [ngSwitch]="orderParsed.status" class="status-info-group">
+        <label class="font-weight-bold">Estatus: </label>
+        <div class="d-flex justify-content-end">
+          <div class="w-100">
+            <small *ngSwitchCase="-1" class="font-weight-bold"> EN CARRITO</small>
+            <small *ngSwitchCase="0" class="font-weight-bold"> CANCELADA</small>
+            <small *ngSwitchCase="1" class="font-weight-bold"> EN PROCESO</small>
+            <small *ngSwitchCase="2" class="font-weight-bold"> APROBADA</small>
+            <small *ngSwitchDefault>Nulo</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex flex-column right-head-group">
+      <div class="provider-info-group">
+        <label class="font-weight-bold">Fecha de creación: </label>
+        <small>{{ (orderParsed?.create | date: 'short') }}</small>
+      </div>
+      <div class="provider-info-group">
+        <label class="font-weight-bold">Fecha de entrega: </label>
+        <small>{{ (orderParsed?.prefereDelivery | date: 'short') }}</small>
+      </div>
+    </div>
+  </div>
+  
+  <!-- MAIN-2 -->
+  <h6 main-2 class="d-block w-100 px-3 pt-3 m-0">PRODUCTOS</h6>
+  <div main-2 class="w-100 p-3 table-responsive">
+    <table class="w-100 table">
+      <thead>
+        <tr>  
+          <th>DESCRIPCIÓN</th>
+          <th>PRESENTACIÓN</th>
+          <th>CANTIDAD</th>
+          <th>PRECIO</th>
+          <th>TOTAL DE PRODUCTO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of orderParsed?.items">
+          <td>{{ item.material.name }}</td>
+          <td>{{ item.material.presentation.name }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ (item.price | currency: ' ') + ' ' + item.currency }}</td>
+          <td>{{ (item.amount | currency: ' ') + ' ' + item.currency }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div foot>
+    <div class="w-100 d-flex flex-column justify-content-end align-items-end">
+      <div class="info-group">
+        <label class="font-weight-bold">Sub-total:</label>
+        <span>{{ 
+          (orderParsed?.itemAmount | currency: ' ') + ' ' +
+          orderParsed?.items[0].currency }}
+        </span>
+      </div>
+      <div class="info-group">
+        <label class="font-weight-bold">Pagos:</label>
+        <span>{{ 
+          (orderParsed?.paymentAmount | currency: ' ') + ' ' +
+          orderParsed?.items[0].currency }}
+        </span>
+      </div>
+      <div class="info-group border-top mt-2">
+        <label class="font-weight-bold font-18">Total a pagar:</label>
+        <span class="font-weight-bold">{{ 
+          (orderParsed?.itemAmount | currency: ' ') + ' ' +
+          orderParsed?.items[0].currency }}
+        </span>
+      </div>
+    </div>
+  </div>
+</shared-print-area>

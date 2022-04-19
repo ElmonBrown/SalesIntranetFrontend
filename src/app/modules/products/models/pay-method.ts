@@ -1,0 +1,1 @@
+export type PayMethod = 'card' | 'credit' | 'transfer';

@@ -1,0 +1,105 @@
+<div class="auth-main">
+
+    <div class="auth_div vivify fadeIn">
+
+        <div class="card">
+            <div class="header">
+                <h1 width="50" class="d-inline-block align-top mr-2">Crea una cuenta</h1>
+            </div>
+            <div class="body" style='text-align:left'>
+                <form [formGroup]="frmSignup" (ngSubmit)="save($event)">
+
+                    <label>Usuario</label>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control "
+                            [ngClass]="frmSignup.controls['userCtrl'].invalid  && userField.touched ? 'is-invalid' : ''"
+                            [ngClass]="frmSignup.controls['userCtrl'].valid  && userField.touched ? 'is-valid' : ''"
+                            placeholder formControlName="userCtrl">
+                    </div>
+
+                    <p *ngIf="userField.errors && userField.touched">
+                        <small class="form-text text-danger"
+                            *ngIf="userField.hasError('required') && userField.touched">El campo usuario es
+                            requerido.</small>
+                        <small class="form-text text-danger" *ngIf="userField.hasError('minlength')">Debe ser mínimo de
+                            4</small>
+                        <small class="form-text text-danger" *ngIf="userField.hasError('maxlength')">Debe ser maximo de
+                            10</small>
+                    </p>
+
+                    <!-- Password -->
+                    <label>Contraseña</label>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control"
+                            [ngClass]="passwordField.invalid  && passwordField.touched ? 'is-invalid' : ''"
+                            [ngClass]="passwordField.valid  && passwordField.touched ? 'is-valid' : ''"
+                            placeholder="" formControlName="password">
+                    </div>
+
+                    <p *ngIf="passwordField.errors && passwordField.touched">
+
+                        <small class="col text-danger" *ngIf="passwordField.hasError('required') && passwordField.touched " >El
+                            campo Contraseña es
+                            requerido.</small>
+
+                        <small class="col"
+                            [ngClass]="passwordField.hasError('required') || passwordField.hasError('hasNumber')  ? 'text-danger' :'text-success'">
+                            ¡Debe contener al menos 1 número!</small>
+
+                        <small
+                            [ngClass]="passwordField.hasError('required') || passwordField.hasError('minlength')  ? 'text-danger' : 'text-success'">
+                            ¡Debe tener al menos 8 caracteres!
+                        </small>
+
+                        <small class="col"
+                            [ngClass]="passwordField.hasError('required') || passwordField.hasError('hasCapitalCase')  ? 'text-danger' : 'text-success'">
+
+                            ¡Debe contener al menos 1 en mayúsculas!
+                        </small>
+
+                        <small class="col"
+                            [ngClass]="passwordField.hasError('required') || passwordField.hasError('hasSmallCase')  ? 'text-danger' : 'text-success'">
+
+                            ¡Debe contener al menos 1 letra en minúscula!
+                        </small>
+
+
+                    </p>
+
+                    <label>Confirmar contraseña</label>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder=""
+                            [ngClass]="confirmPasswordField.invalid  && confirmPasswordField.touched ? 'is-invalid' : ''"
+                            [ngClass]="confirmPasswordField.valid  && confirmPasswordField.touched ? 'is-valid' : ''"
+                            formControlName="confirmPassword">
+                    </div>
+
+                    <p *ngIf="confirmPasswordField.errors && confirmPasswordField.touched">
+                        <small class="form-text text-danger"
+                            *ngIf="confirmPasswordField.hasError('required') && confirmPasswordField.touched">El
+                            campo Confirmar Contraseña es
+                            requerido.</small>
+                        <small class="text-danger"
+                            *ngIf="confirmPasswordField.hasError('NoPassswordMatch') ">Las
+                            La contraseña no coincide.</small>
+                    </p>
+
+                    <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">Registrar</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="animate_lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</div>

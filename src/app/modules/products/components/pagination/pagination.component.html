@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-between align-items-center mt-4">
+  <span> {{ 'Página ' + currentPage + ' de ' + totalOfPages}} </span>
+  <nav class="ml-4" aria-label="Page navigation">
+    <ul class="pagination">
+      <li>
+        <button 
+          [disabled]="currentPage == 1" 
+          (click)="changePage.emit((currentPage - 1))" 
+          class="btn rounded-lg unselected-page"
+          >Previa</button>
+      </li>
+      <li *ngFor="let page of pages">
+        <button
+          (click)="changePage.emit(page)" 
+          class="btn rounded-circle unselected-page mr-1" 
+          [ngClass]="{'selected-page': currentPage == page }" >{{ page }}</button>
+      </li>
+      <li>
+        <button 
+          [disabled]="currentPage == totalOfPages"
+          class="btn rounded-lg mr-1 unselected-page"
+          (click)="changePage.emit((currentPage + 1))" 
+          >Siguente</button>
+      </li>
+    </ul>
+  </nav>
+</div>

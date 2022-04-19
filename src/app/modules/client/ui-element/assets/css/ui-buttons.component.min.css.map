@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../../ui-buttons/ui-buttons.component.scss"
+    ],
+    "names": [],
+    "file": "ui-buttons.component.min.css"
+}

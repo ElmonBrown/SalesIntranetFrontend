@@ -1,0 +1,56 @@
+<div class="print-container">
+  <main>
+    <ng-content select="[title-1]"></ng-content>
+    <div class="head-container">
+      <div class="d-flex flex-column">
+        <label for="" class="font-weight-bold">[Nombre de empresa]</label>
+        <label for="" class="font-weight-bold">[NIF]</label>
+        <label for="" class="font-weight-bold">[Teléfono]</label>
+        <label for="" class="font-weight-bold">[Correo]</label>
+      </div>
+      <div>
+        <a class="d-flex flex-column" [routerLink]="['/pages/blank-page']" href="javascript:void(0)">
+          <img src="assets/images/icon.svg" alt="Mooli Logo"
+          class="img-fluid logo" /><span>Ventas</span>
+        </a>
+      </div>
+    </div>
+    <ng-content select="[head-1]">
+
+    </ng-content>
+    <div class="main-container">
+      <section class="m-4 d-flex flex-column justify-content-center align-items-center">
+        <div class="head">
+
+          <!-- MAIN-PART-1 -->
+          <ng-content select="[main-1]">
+
+          </ng-content>
+
+        </div>
+      </section>
+      <section class="m-4 d-flex flex-column justify-content-center align-items-center">
+
+        <!-- MAIN-PART-2 -->
+        <ng-content select="[main-2]">
+
+        </ng-content>
+
+      </section>
+      <section class="m-4 d-flex flex-column justify-content-center align-items-center">
+        <div class="foot">
+          <!-- FOOTER -->
+          <ng-content select="[foot]">
+
+          </ng-content>
+        </div>
+      </section>
+    </div>
+
+    <div class="actions-area">
+      <ng-content select="[actions]">
+
+      </ng-content>
+    </div>
+  </main>
+</div>

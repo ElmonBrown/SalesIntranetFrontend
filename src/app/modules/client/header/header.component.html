@@ -1,0 +1,33 @@
+<!-- Page top navbar -->
+<nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-left">
+        </div>
+        <div class="navbar-right">
+            <div id="navbar-menu">
+                <ul class="nav navbar-nav">
+                    <li class="hidden-xs">
+                      <a class="btn btn-default rounder-lg" [routerLink]="['/products-cart']">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="hidden-xs">
+                        <a *ngIf="!isFullScreen" href="javascript:void(0);" (click)="openfullScreen()"
+                            id="btnFullscreen" class="icon-menu"><i class="fa fa-arrows-alt"></i></a>
+                        <a *ngIf="isFullScreen" href="javascript:void(0);" (click)="closeFullScreen()"
+                            id="btnFullscreen" class="icon-menu"><i class="fa fa-arrows-alt"></i></a>
+                    </li>
+                    <li>
+                        <a (click)="logout()" [routerLink]="['/login']" href="javascript:void(0)" class="icon-menu"><i
+                                class="fa fa-power-off"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+<app-leftmenu></app-leftmenu>

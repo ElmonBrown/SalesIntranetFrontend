@@ -1,0 +1,27 @@
+<!-- Page header section  -->
+<div
+    style="width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; position: relative;">
+    <div class="ctr">
+        <h1 data-testid="title">Registro de Usuario</h1>
+        <!-- <h2 data-testid="file-type">ingrese RNC/Cedula</h2> -->
+
+        <div class=" padding: 60px 20px mt-2">
+
+            <form (ngSubmit)="submit( )" #RNCCedula="ngForm" autocomplete="off">
+                <div id="dOpcionesBusqueda" class="mb-2">
+                    <input (keypress)="onlyNumberKey($event)" type="text" maxlength="11" [formControl]="rncCtrl"
+                        placeholder="Ingrese RNC" name="RNC" required
+                        class="form-control only-numbers border: 1px solid #ccc;" data-form-type="other">
+                </div>
+
+                <p>
+                    <small class="form-text text-danger" *ngIf="rncCtrl.hasError('required') && rncCtrl.touched">El campo es
+                        requerido</small>
+                </p>
+
+                <button type="submit" class="btn-block btn btn-primary">Buscar</button>
+            </form>
+        </div>
+    </div>
+
+</div>

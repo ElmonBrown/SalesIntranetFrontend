@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "ui-tabs.component.scss"
+    ],
+    "names": [],
+    "file": "ui-tabs.component.min.css"
+}

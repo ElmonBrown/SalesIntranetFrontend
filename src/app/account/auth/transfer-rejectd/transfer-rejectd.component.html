@@ -1,0 +1,34 @@
+<div>
+    <div class="container-fluid bgc">
+
+        <div class="block-header">
+            <div class="row clearfix">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+
+                </div>
+                <div class="col-lg-8 col-md-12 col-sm-12 text-lg-right">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="text-area card">
+            <form [formGroup]="form" (ngSubmit)="save($event)">
+
+                <div class="modal-header">
+                    <h5 class="modal-title sub-title font-weight-bold" id="exampleModalCenterTitle">Escribe el motivo
+                        del rechazo</h5>
+                </div>
+                <div class=" c_form_group">
+                    <label class="sub-title font-weight-bold">Razón de la anulación...</label>
+                    <textarea rows="4" class="form-control no-resize" placeholder="escribe la razón aqui..."
+                    formControlName="reason" autofocus></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit"  [disabled]="form.invalid" class="btn btn-primary">Enviar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

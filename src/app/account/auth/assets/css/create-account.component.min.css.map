@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAmBA,AAAA,yBAAyB,CAAC,YAAY,AAAC,CACnC,UAAU,CAAE,OAAO,CACtB",
+    "sources": [
+        "../../create-account/create-account.component.scss"
+    ],
+    "names": [],
+    "file": "create-account.component.min.css"
+}
