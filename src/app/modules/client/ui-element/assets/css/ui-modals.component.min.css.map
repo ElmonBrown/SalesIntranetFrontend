@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "../../ui-modals/ui-modals.component.scss"
-    ],
-    "names": [],
-    "file": "ui-modals.component.min.css"
-}

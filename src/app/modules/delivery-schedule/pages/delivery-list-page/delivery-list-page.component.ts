@@ -9,6 +9,7 @@ import { Delivery } from '../../models/delivery';
   styleUrls: ['./delivery-list-page.component.scss']
 })
 export class DeliveryListPageComponent implements OnInit {
+  isFullScreen: boolean;
   deliverySelected: Delivery;
   modalRef: BsModalRef;
 
@@ -114,18 +115,18 @@ export class DeliveryListPageComponent implements OnInit {
   constructor(private modalService: BsModalService) { }
 
   ngOnInit(): void {
+    // this.openfullScreen();
   }
 
-  onDeliveryEmitter(delivery: Delivery, template: TemplateRef<any>): void {
-    this.deliverySelected = delivery
-    this.openModalWithClassCenter(template)
-  }
-
-  openModalWithClassCenter(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(
-      template,
-      Object.assign({}, { class: 'gray modal-md modal-dialog', ...modalConfigOpt}),
-    );
+  openfullScreen() {
+    console.log('OPENING')
+    let elem = document.documentElement;
+    let methodToBeInvoked = elem.requestFullscreen ||
+      elem.requestFullscreen || elem['mozRequestFullscreen'] || elem['msRequestFullscreen'];
+    if (methodToBeInvoked) {
+      methodToBeInvoked.call(elem)
+    }
+    this.isFullScreen = true;
   }
 
   closeModal(): void {

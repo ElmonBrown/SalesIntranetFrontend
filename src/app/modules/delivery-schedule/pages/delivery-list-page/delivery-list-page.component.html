@@ -1,5 +1,5 @@
-<app-header></app-header>
-<div id="main-content">
+<!-- <app-header></app-header> -->
+<div>
   <section class="hourly-list px-2 m-2 rounded-lg">
     <div class="d-flex justify-content-between">
       <h5 class="">11:00AM</h5>
@@ -8,7 +8,6 @@
     <div class="row">
       <div *ngFor="let item of groupA" class="col-12 col-md-6 col-xl-3 my-3">
         <delivery-details-card
-        (deliveryEmitter)="onDeliveryEmitter($event, template1)"
         [showFullInfo]="true"
         [delivery]="item"
         ></delivery-details-card>
@@ -24,7 +23,6 @@
     <div class="row">
       <div *ngFor="let item of groupB" class="col-12 col-md-6 col-xl-3 my-3">
         <delivery-details-card
-        (deliveryEmitter)="onDeliveryEmitter($event, template1)"
         [showFullInfo]="true"
         [delivery]="item"
         ></delivery-details-card>
@@ -40,7 +38,6 @@
     <div class="row">
       <div *ngFor="let item of groupC" class="col-12 col-md-6 col-xl-3 my-3">
         <delivery-details-card
-        (deliveryEmitter)="onDeliveryEmitter($event, template1)"
         [showFullInfo]="true"
         [delivery]="item"
         ></delivery-details-card>
@@ -50,34 +47,4 @@
   
   <router-outlet></router-outlet>
 </div>
-<app-footer></app-footer>
-
-<ng-template #template1>
-  <shared-small-info-modal
-    [modalRef]="modalRef"
-  >
-    <div header class="modal-header w-100" >
-      <h5 class="ml-3 modal-title sub-title text-center w-100 font-weight-bold">INFORMACIÓN GENERAL</h5>
-      <button type="button" (click)="closeModal()" class="close sub-title" data-dismiss="modal"
-        aria-label="Close"><span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div body class="modal-body">
-      <delivery-details-card
-        [showFullInfo]="true"
-        [delivery]="deliverySelected"
-        ></delivery-details-card>
-    </div>
-    <div *ngIf="!deliverySelected.wasDelivered" footer class="modal-footer w-100 d-flex flex-column justify-content-center">
-      <span>¿Desea confirmar entrega?</span>
-      <div class="d-flex">
-        <button type="button" (click)="confirmDelivery()" 
-          class="btn btn-danger pl-3 pr-3 mr-2">Sí
-        </button>
-        <button type="button" class="btn btn-default" data-dismiss="modal"
-            (click)="modalRef.hide()">No
-        </button>
-      </div>
-    </div>
-  </shared-small-info-modal>
-</ng-template>
+<!-- <app-footer></app-footer> -->

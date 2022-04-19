@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "../../ui-notifications/ui-notifications.component.scss"
-    ],
-    "names": [],
-    "file": "ui-notifications.component.min.css"
-}

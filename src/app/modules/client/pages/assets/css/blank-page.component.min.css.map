@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,YAAY,AAAC,CACT,SAAS,CAAE,eAAe,CAC7B",
-    "sources": [
-        "../../blank-page/blank-page.component.scss"
-    ],
-    "names": [],
-    "file": "blank-page.component.min.css"
-}

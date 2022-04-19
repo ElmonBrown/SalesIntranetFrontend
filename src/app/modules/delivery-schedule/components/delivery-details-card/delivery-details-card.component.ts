@@ -10,14 +10,9 @@ export class DeliveryDetailsCardComponent implements OnInit {
 
   @Input() delivery: Delivery
   @Input() showFullInfo: boolean
-  @Output() deliveryEmitter = new EventEmitter()
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  clickCard(): void {
-    this.deliveryEmitter.emit(this.delivery)
   }
 }
